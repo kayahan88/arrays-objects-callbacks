@@ -28,6 +28,11 @@
 */
 
 // Code Here 
+let arr = [1, 2, 3, 4]
+
+function first(arr, callback){
+  return callback(arr[0])
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -48,6 +53,9 @@ first(names, function(firstName){
 */
 
 //Code Here
+function last(anArray, callbackFn){
+  return callbackFn(anArray[anArray.length - 1])
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,6 +74,9 @@ last(names, function(lastName){
 */
 
 //Code Here
+function multiply(num1, num2, callbackFn){
+  return callbackFn(num1 * num2)
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +96,13 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+function contains(anArray, aName, aCallback){
+  if (anArray.includes(aName)) {
+    aCallback(true)
+  } else {
+    aCallback(false)
+  }
+}
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -106,6 +124,12 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
+function uniq(anArray, callbackFn){
+  let arrNew = [...new Set(anArray)]
+  callbackFn(arrNew)
+}
+
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,6 +147,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
+function each(anArrayofNames, callbackFn){
+  for(let i = 0; i < anArrayofNames.length; i++) {
+    callbackFn(anArrayofNames[i], i)
+  }
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -140,6 +169,13 @@ each(names, function(item, indice){
 */
 
 // Code here
+function getUserById(users, anId, aCallback) {
+  for(let i = 0; i < users.length; i++) {
+    if (users[i].id === anId) {
+      return aCallback(users[i])
+    }
+  }
+} 
 
 // Do not edit the code below.
 var users = [
